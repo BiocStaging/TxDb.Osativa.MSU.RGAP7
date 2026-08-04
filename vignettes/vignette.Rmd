@@ -56,6 +56,9 @@ seqinfo(TxDb.Osativa.MSU.RGAP7)
 ```{r avl_chromosomes}
 seqlevels(TxDb.Osativa.MSU.RGAP7)
 ```
+The 12 nuclear chromosomes of the IRGSP‑1.0 / MSU7 assembly. These contain the vast majority of annotated genes. 
+`ChrUn` : Unanchored contigs – sequences that could not be placed on any chromosome. Sometimes called “ChrUnknown”.
+`ChrSy` : Syngenta pseudomolecule – a separate assembly contributed by Syngenta that contains additional sequence not present in the main IRGSP‑1.0 build. It is often used for the plastid genome or extra scaffolds.
 
 # Gene annotations
 
