@@ -1,0 +1,116 @@
+---
+title: "Transcript Annotation Database for *Oryza sativa*"
+author: "Kabilan S"
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Transcript Annotation Database for Oryza sativa}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+**TxDb.Osativa.MSU.RGAP7** is a Bioconductor-compatible transcript annotation
+package for *Oryza sativa* generated from the official **Rice Genome Annotation
+Project (RGAP) Release 7** GFF3 annotation based on the **IRGSP-1.0** reference
+genome (also known as MSU7).
+
+The package provides genomic coordinates and transcript models, including genes,
+transcripts, exons, coding sequences (CDS), and promoter regions. It is intended
+for downstream genomic analyses using Bioconductor packages such as
+**GenomicFeatures**, **GenomicRanges**, **Signac**, **ArchR**, and **ChIPseeker**.
+
+```{r eval=FALSE}
+# Install required Bioconductor packages
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c(
+    "GenomicFeatures",
+    "GenomicRanges"
+))
+```
+
+# Loading the package
+
+```{r loading}
+library(TxDb.Osativa.MSU.RGAP7)
+library(GenomicFeatures)
+```
+
+# Package summary
+
+```{r summary}
+TxDb.Osativa.MSU.RGAP7
+```
+
+# Chromosome information
+
+```{r chromosome}
+seqinfo(TxDb.Osativa.MSU.RGAP7)
+```
+
+# Available chromosomes
+
+```{r avl_chromosomes}
+seqlevels(TxDb.Osativa.MSU.RGAP7)
+```
+
+# Gene annotations
+
+Retrieve all annotated genes.
+
+```{r gene_annotations} 
+genes(TxDb.Osativa.MSU.RGAP7)
+```
+
+# Transcript annotations
+
+```{r transcripts_annotations}
+head(transcripts(TxDb.Osativa.MSU.RGAP7))
+```
+
+# Exon annotations
+
+```{r exon_annotations}
+head(exons(TxDb.Osativa.MSU.RGAP7))
+```
+
+# Coding sequence (CDS) annotations
+
+```{r cds}
+head(cds(TxDb.Osativa.MSU.RGAP7))
+```
+
+# Promoter regions
+
+Extract promoter regions 2 kb upstream and 200 bp downstream of transcription
+start sites.
+
+```{r promoters}
+head(promoters(
+    TxDb.Osativa.MSU.RGAP7,
+    upstream = 2000,
+    downstream = 200
+))
+```
+
+# Transcripts grouped by gene
+
+```{r transcripts_gene}
+tx_by_gene <- GenomicFeatures::transcriptsBy(TxDb.Osativa.MSU.RGAP7, by = "gene")
+tx_by_gene
+```
+
+# Exons grouped by transcript
+
+```{r exons_transcript}
+exonsBy(TxDb.Osativa.MSU.RGAP7, by = "tx")
+```
+
+# Session information
+
+```{r sessioninfo}
+sessionInfo()
+```

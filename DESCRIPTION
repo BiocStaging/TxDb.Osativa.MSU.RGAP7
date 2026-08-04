@@ -1,0 +1,49 @@
+Package: TxDb.Osativa.MSU.RGAP7
+Title: Transcript Annotation Database for Rice
+Version: 0.99.0
+Authors@R:
+    c(
+      person("Dwijesh Chandra", "Mishra",
+             role="aut",
+             email="dwij.mishra@gmail.com",
+             comment=c(ORCID="0000-0002-3327-6156")),
+      person("Kabilan", "S",
+             role=c("aut","cre"),
+             email="kabilan151414@gmail.com",
+             comment=c(ORCID="0009-0002-9422-0938")),
+      person("ICAR-IARI",
+             role="fnd",
+             email="info@iari.res.in")
+    )
+Description:
+    A Bioconductor-compatible transcript annotation database
+    generated from the official Rice Genome Annotation Project
+    (RGAP) Release 7 GFF3 annotation for Oryza sativa.
+Depends:
+    R (>= 4.5.0)
+Imports:
+    AnnotationDbi,
+    DBI,
+    RSQLite,
+    rappdirs,
+    GenomicFeatures
+Suggests:
+    BiocManager,
+    BiocStyle,
+    GenomeInfoDb,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+License: Artistic-2.0
+Encoding: UTF-8
+URL:
+    https://github.com/kabilanbio/TxDb.Osativa.MSU.RGAP7
+BugReports:
+    https://github.com/kabilanbio/TxDb.Osativa.MSU.RGAP7/issues
+biocViews:
+    AnnotationData,
+    TxDb,
+    Oryza_sativa,
+    SequenceAnnotation
+Config/roxygen2/version: 8.0.0
