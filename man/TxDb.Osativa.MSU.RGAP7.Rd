@@ -42,7 +42,7 @@ ls('package:TxDb.Osativa.MSU.RGAP7')
 TxDb.Osativa.MSU.RGAP7
 
 ## retrieve all genes
-genes(TxDb.Osativa.MSU.RGAP7)
+GenomicFeatures::genes(TxDb.Osativa.MSU.RGAP7)
 }
 
 \keyword{package}

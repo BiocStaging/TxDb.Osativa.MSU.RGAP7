@@ -23,17 +23,12 @@ Depends:
     R (>= 4.5.0)
 Imports:
     AnnotationDbi,
-    DBI,
-    RSQLite,
-    rappdirs,
     GenomicFeatures
 Suggests:
     BiocManager,
     BiocStyle,
-    GenomeInfoDb,
     knitr,
-    rmarkdown,
-    testthat (>= 3.0.0)
+    rmarkdown
 VignetteBuilder: knitr
 License: Artistic-2.0
 Encoding: UTF-8
