@@ -36,25 +36,19 @@ BiocManager::install(c(
 ```
 
 ## Loading packages
-```{r}
+```{r loading}
 # Loading the Package
 library(AnnotationHub)
+library(GenomicFeatures)
 ```
 
-```{r}
-# Installing the org.Hbacteriophora.eg.db package
+```{r downloading}
+# Downloading the TxDb file from AnnotationHub
 ah <- AnnotationHub()
 TxDb.Osativa.MSU.RGAP7 <- ah[["AH122276"]]
 ```
 
-# Loading the package
-
-```{r loading}
-library(TxDb.Osativa.MSU.RGAP7)
-library(GenomicFeatures)
-```
-
-# Package summary
+# TxDb file summary
 
 ```{r summary}
 TxDb.Osativa.MSU.RGAP7
