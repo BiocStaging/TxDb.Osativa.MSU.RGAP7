@@ -29,7 +29,7 @@ TxDb.Osativa.MSU.RGAP7ORGANISM <- "Oryza sativa"
   # Optional: clean up dbconn if used in manual mode
   if (exists("dbconn", envir = datacache)) {
     conn <- get("dbconn", envir = datacache)
-    if (DBI::dbIsValid(conn)) DBI::dbDisconnect(conn)
+    if (RSQLite::dbIsValid(conn)) RSQLite::dbDisconnect(conn)
   }
 }
 

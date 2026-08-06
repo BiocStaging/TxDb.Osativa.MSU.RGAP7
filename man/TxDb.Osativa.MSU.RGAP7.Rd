@@ -34,7 +34,7 @@
 \examples{
 ## load the library
 library(AnnotationHub)
-ah <- AnnotationHub()
+ah <- AnnotationHub::AnnotationHub()
 TxDb.Osativa.MSU.RGAP7 <- ah[["AH122276"]]
 
 TxDb.Osativa.MSU.RGAP7

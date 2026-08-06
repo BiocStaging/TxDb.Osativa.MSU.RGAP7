@@ -23,11 +23,11 @@ for downstream genomic analyses using Bioconductor packages such as
 ```{r eval=FALSE}
 # Installation
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
-  install.packages("BiocManager")
+    install.packages("BiocManager")
 }
 BiocManager::install(version = "devel")
 if (!requireNamespace("AnnotationHub", quietly = TRUE)) {
-  install.packages("AnnotationHub")
+    install.packages("AnnotationHub")
 }
 BiocManager::install(c(
     "GenomicFeatures",
@@ -44,7 +44,7 @@ library(GenomicFeatures)
 
 ```{r downloading}
 # Downloading the TxDb file from AnnotationHub
-ah <- AnnotationHub()
+ah <- AnnotationHub::AnnotationHub()
 TxDb.Osativa.MSU.RGAP7 <- ah[["AH122276"]]
 ```
 
@@ -97,8 +97,7 @@ head(cds(TxDb.Osativa.MSU.RGAP7))
 
 # Promoter regions
 
-Extract promoter regions 2 kb upstream and 200 bp downstream of transcription
-start sites.
+Extract promoter regions 2 kb upstream and 200 bp downstream of transcription start sites.
 
 ```{r promoters}
 head(promoters(

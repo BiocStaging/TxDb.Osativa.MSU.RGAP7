@@ -15,22 +15,30 @@ Authors@R:
              role="fnd",
              email="info@iari.res.in")
     )
-Description:
-    A Bioconductor-compatible transcript annotation database
-    generated from the official Rice Genome Annotation Project
-    (RGAP) Release 7 GFF3 annotation for Oryza sativa.
+Description:  
+    Exposes transcript, exon, and CDS annotations for Oryza sativa  
+    (rice) as a Bioconductor TxDb object, generated from the Rice  
+    Genome Annotation Project (RGAP) Release 7 / MSU7 GFF3 file  
+    (genome assembly IRGSP-1.0). The TxDb.Osativa.MSU.RGAP7 object  
+    is created and exported automatically when the package is  
+    loaded, and can be queried directly with standard  
+    GenomicFeatures accessors such as genes(), transcripts(),  
+    exonsBy(), and cdsBy() to retrieve gene models keyed by MSU  
+    locus identifiers. 
 Depends:
-    R (>= 4.5.0)
+    R (>= 4.6.0)
 Imports:
     AnnotationDbi,
     GenomicFeatures,
-    stats
+    stats,
+    RSQLite
 Suggests:
     BiocManager,
     BiocStyle,
     knitr,
     riceidconverter,
-    rmarkdown
+    rmarkdown,
+    AnnotationHub
 VignetteBuilder: knitr
 License: Artistic-2.0
 Encoding: UTF-8
@@ -42,5 +50,6 @@ biocViews:
     AnnotationData,
     TxDb,
     Oryza_sativa,
-    SequenceAnnotation
+    SequenceAnnotation,
+    AnnotationHub
 Config/roxygen2/version: 8.1.0
