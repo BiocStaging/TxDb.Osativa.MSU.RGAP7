@@ -10,7 +10,7 @@
 #'   (for example \code{rownames(obj[["RNA"]])} of a Seurat object). When
 #'   supplied, the result is restricted to identifiers present in
 #'   \code{universe}, keeping the order of \code{msu_ids}.
-#' @param unique Logical; if \code{TRUE} (default) duplicated RAP-DB
+#' @param dedup Logical; if \code{TRUE} (default) duplicated RAP-DB
 #'   identifiers are removed.
 #'
 #' @return A character vector of RAP-DB identifiers, in the order of
@@ -32,15 +32,15 @@
 #' }
 #'
 #' @export
-msu_to_rap <- function(msu_ids, universe = NULL, unique = TRUE)
+msu_to_rap <- function(msu_ids, universe = NULL, dedup = TRUE)
 {
   if (!is.character(msu_ids))
     stop("'msu_ids' must be a character vector")
+  if (!is.null(universe) && !is.character(universe))
+    stop("'universe' must be a character vector or NULL")
   if (!requireNamespace("riceidconverter", quietly=TRUE))
     stop("package 'riceidconverter' is required for msu_to_rap(); ",
          "install it with install.packages(\"riceidconverter\")")
-  if (!is.null(universe) && !is.character(universe))
-    stop("'universe' must be a character vector or NULL")
 
   converted <- riceidconverter::RiceIDConvert(msu_ids,
                                               fromType="MSU",
@@ -49,8 +49,8 @@ msu_to_rap <- function(msu_ids, universe = NULL, unique = TRUE)
                                 as.character(converted$MSU))
   rap_ids <- unname(rap_lookup[msu_ids])
   rap_ids <- rap_ids[!is.na(rap_ids) & nzchar(rap_ids) & rap_ids != "None"]
-  if (unique)
-    rap_ids <- base::unique(rap_ids)
+  if (dedup)
+    rap_ids <- unique(rap_ids)
   if (!is.null(universe))
     rap_ids <- rap_ids[rap_ids %in% universe]
   rap_ids

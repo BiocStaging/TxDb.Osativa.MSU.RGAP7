@@ -4,7 +4,7 @@
 \alias{msu_to_rap}
 \title{Convert MSU (RGAP7) gene identifiers to RAP-DB identifiers}
 \usage{
-msu_to_rap(msu_ids, universe = NULL, unique = TRUE)
+msu_to_rap(msu_ids, universe = NULL, dedup = TRUE)
 }
 \arguments{
 \item{msu_ids}{Character vector of MSU/RGAP7 gene identifiers.}
@@ -14,7 +14,7 @@ msu_to_rap(msu_ids, universe = NULL, unique = TRUE)
 supplied, the result is restricted to identifiers present in
 \code{universe}, keeping the order of \code{msu_ids}.}
 
-\item{unique}{Logical; if \code{TRUE} (default) duplicated RAP-DB
+\item{dedup}{Logical; if \code{TRUE} (default) duplicated RAP-DB
 identifiers are removed.}
 }
 \value{

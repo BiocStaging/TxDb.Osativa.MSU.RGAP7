@@ -20,32 +20,42 @@ The package provides genomic coordinates and transcript models, including genes,
 transcripts, exons, coding sequences (CDS), and promoter regions. It is intended
 for downstream genomic analyses using Bioconductor packages such as
 **GenomicFeatures**, **GenomicRanges**, **Signac**, **ArchR**, and **ChIPseeker**.
+
+The TxDb object itself is not shipped inside the package; it is hosted on
+**AnnotationHub** and downloaded on first use.
+
 ```{r eval=FALSE}
 # Installation
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
     install.packages("BiocManager")
 }
-BiocManager::install(version = "devel")
-if (!requireNamespace("AnnotationHub", quietly = TRUE)) {
-    install.packages("AnnotationHub")
-}
 BiocManager::install(c(
+    "TxDb.Osativa.MSU.RGAP7",
+    "AnnotationHub",
     "GenomicFeatures",
     "GenomicRanges"
 ))
 ```
 
 ## Loading packages
-```{r loading}
-# Loading the Package
+```{r loading, message=FALSE}
+library(TxDb.Osativa.MSU.RGAP7)
 library(AnnotationHub)
 library(GenomicFeatures)
 ```
 
 ```{r downloading}
 # Downloading the TxDb file from AnnotationHub
-ah <- AnnotationHub::AnnotationHub()
-TxDb.Osativa.MSU.RGAP7 <- ah[["AH122276"]]
+TxDb.Osativa.MSU.RGAP7 <- tryCatch({
+    ah <- AnnotationHub()
+    ah[["AH122276"]]
+}, error = function(e) NULL)
+```
+
+```{r gate, include=FALSE}
+## The remaining chunks need the downloaded resource; skip them when the
+## build machine has no network access or the resource is unavailable.
+knitr::opts_chunk$set(eval = !is.null(TxDb.Osativa.MSU.RGAP7))
 ```
 
 # TxDb file summary
@@ -120,8 +130,19 @@ tx_by_gene
 exonsBy(TxDb.Osativa.MSU.RGAP7, by = "tx")
 ```
 
+# Converting MSU identifiers to RAP-DB identifiers
+
+Gene models in this database are keyed by MSU locus identifiers
+(`LOC_Os##g#####`). Many rice resources instead use RAP-DB identifiers
+(`Os##g#######`). `msu_to_rap()` translates between the two, preserving input
+order and dropping identifiers that cannot be converted.
+
+```{r msu_to_rap, eval = requireNamespace("riceidconverter", quietly = TRUE)}
+msu_to_rap(c("LOC_Os01g01010", "LOC_Os01g01019", "LOC_Os01g01040"))
+```
+
 # Session information
 
-```{r sessioninfo}
+```{r sessioninfo, eval=TRUE}
 sessionInfo()
 ```
