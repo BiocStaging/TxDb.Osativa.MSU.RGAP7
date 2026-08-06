@@ -20,16 +20,31 @@ The package provides genomic coordinates and transcript models, including genes,
 transcripts, exons, coding sequences (CDS), and promoter regions. It is intended
 for downstream genomic analyses using Bioconductor packages such as
 **GenomicFeatures**, **GenomicRanges**, **Signac**, **ArchR**, and **ChIPseeker**.
-
 ```{r eval=FALSE}
-# Install required Bioconductor packages
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
+# Installation
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+BiocManager::install(version = "devel")
+if (!requireNamespace("AnnotationHub", quietly = TRUE)) {
+  install.packages("AnnotationHub")
+}
 BiocManager::install(c(
     "GenomicFeatures",
     "GenomicRanges"
 ))
+```
+
+## Loading packages
+```{r}
+# Loading the Package
+library(AnnotationHub)
+```
+
+```{r}
+# Installing the org.Hbacteriophora.eg.db package
+ah <- AnnotationHub()
+TxDb.Osativa.MSU.RGAP7 <- ah[["AH122276"]]
 ```
 
 # Loading the package

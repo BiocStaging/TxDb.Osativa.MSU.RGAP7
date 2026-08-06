@@ -23,11 +23,13 @@ Depends:
     R (>= 4.5.0)
 Imports:
     AnnotationDbi,
-    GenomicFeatures
+    GenomicFeatures,
+    stats
 Suggests:
     BiocManager,
     BiocStyle,
     knitr,
+    riceidconverter,
     rmarkdown
 VignetteBuilder: knitr
 License: Artistic-2.0
@@ -41,4 +43,4 @@ biocViews:
     TxDb,
     Oryza_sativa,
     SequenceAnnotation
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.0

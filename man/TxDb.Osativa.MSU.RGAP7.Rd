@@ -33,12 +33,10 @@
 
 \examples{
 ## load the library
-library(TxDb.Osativa.MSU.RGAP7)
+library(AnnotationHub)
+ah <- AnnotationHub()
+TxDb.Osativa.MSU.RGAP7 <- ah[["AH122276"]]
 
-## list the contents that are loaded into memory
-ls('package:TxDb.Osativa.MSU.RGAP7')
-
-## show the db object that is loaded by calling its name
 TxDb.Osativa.MSU.RGAP7
 
 ## retrieve all genes
