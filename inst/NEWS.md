@@ -18,3 +18,8 @@
 ### Author update
 
 - Updated the author details in DESCRIPTION.
+
+## Version 0.99.2 (2026-08-07)
+
+- Updated README.md file.
+

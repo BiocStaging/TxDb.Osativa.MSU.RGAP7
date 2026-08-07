@@ -8,7 +8,7 @@ TxDb.Osativa.MSU.RGAP7 is a Bioconductor-compatible transcript annotation databa
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
     install.packages("BiocManager")
 }
-BiocManager::install(c("TxDb.Osativa.MSU.RGAP7", "AnnotationHub", "GenomicFeatures"))
+BiocManager::install(c("AnnotationHub", "GenomicFeatures"))
 ```
 
 ## Usage
