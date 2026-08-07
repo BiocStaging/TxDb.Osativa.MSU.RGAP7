@@ -30,7 +30,6 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) {
     install.packages("BiocManager")
 }
 BiocManager::install(c(
-    "TxDb.Osativa.MSU.RGAP7",
     "AnnotationHub",
     "GenomicFeatures",
     "GenomicRanges"
@@ -39,7 +38,6 @@ BiocManager::install(c(
 
 ## Loading packages
 ```{r loading, message=FALSE}
-library(TxDb.Osativa.MSU.RGAP7)
 library(AnnotationHub)
 library(GenomicFeatures)
 ```
