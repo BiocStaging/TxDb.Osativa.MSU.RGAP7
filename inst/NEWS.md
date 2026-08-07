@@ -12,3 +12,9 @@
 - Added `inst/scripts/make-data.R` and `inst/scripts/make-metadata.R`
   documenting how the TxDb resource and its AnnotationHub metadata are built.
 - Added unit tests for `msu_to_rap()`.
+
+## Version 0.99.1 (2026-08-07)
+
+### Author update
+
+- Updated the author details in DESCRIPTION.
