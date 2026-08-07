@@ -17,9 +17,13 @@
 
 ### Author update
 
-- Updated the author details in DESCRIPTION.
+- Updated the author details in `DESCRIPTION`.
 
 ## Version 0.99.2 (2026-08-07)
 
-- Updated README.md file.
+- Updated `README.md` file.
+
+## Version 0.99.3 (2026-08-07)
+
+- Updated `man` file.
 
