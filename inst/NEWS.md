@@ -27,3 +27,7 @@
 
 - Updated `man` file.
 
+## Version 0.99.4 (2026-08-07)
+
+- Updated `metadata.csv` file.
+
