@@ -31,3 +31,7 @@
 
 - Updated `metadata.csv` file.
 
+## Version 0.99.45 (2026-08-07)
+
+- Updated `DESCRIPTION` file.
+
