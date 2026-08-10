@@ -19,13 +19,14 @@ identifiers are removed.}
 }
 \value{
 A character vector of RAP-DB identifiers, in the order of
-  \code{msu_ids}.
+    \code{msu_ids}.
 }
 \description{
-Translates a vector of MSU/RGAP7 locus identifiers (e.g. \code{LOC_Os01g01010})
-into RAP-DB identifiers (e.g. \code{Os01g0100100}) using
-\code{riceidconverter::RiceIDConvert()}. The input order is preserved and
-identifiers that cannot be converted are dropped.
+Translates a vector of MSU/RGAP7 locus identifiers
+(e.g. \code{LOC_Os01g01010}) into RAP-DB identifiers
+(e.g. \code{Os01g0100100}) using \code{riceidconverter::RiceIDConvert()}.
+The input order is preserved and identifiers that cannot be converted are
+dropped.
 }
 \note{
 Requires the \pkg{riceidconverter} package.
@@ -34,13 +35,13 @@ Requires the \pkg{riceidconverter} package.
 msu_ids <- c("LOC_Os01g01010", "LOC_Os01g01019", "LOC_Os01g01040")
 
 if (requireNamespace("riceidconverter", quietly=TRUE)) {
-    ## MSU -> RAP-DB, input order preserved
-    rap_ids <- msu_to_rap(msu_ids)
-    rap_ids
+     ## MSU -> RAP-DB, input order preserved
+     rap_ids <- msu_to_rap(msu_ids)
+     rap_ids
 
-    ## restrict the result to identifiers present in another object,
-    ## e.g. rownames(obj[["RNA"]]) of a Seurat object
-    msu_to_rap(msu_ids, universe=rap_ids[1])
+     ## restrict the result to identifiers present in another object,
+     ## e.g. rownames(obj[["RNA"]]) of a Seurat object
+     msu_to_rap(msu_ids, universe=rap_ids[1])
 }
 
 }

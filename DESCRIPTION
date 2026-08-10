@@ -1,6 +1,6 @@
 Package: TxDb.Osativa.MSU.RGAP7
 Title: Transcripts Annotation Database for Rice
-Version: 0.99.6
+Version: 0.99.7
 Authors@R:
     c(
       person("Dwijesh Chandra", "Mishra",
@@ -33,13 +33,13 @@ Description:
 Depends:
     R (>= 4.6.0)
 Imports:
-    stats
-Suggests:
-    AnnotationHub,
-    BiocManager,
-    BiocStyle,
+    stats,
     GenomicFeatures,
     GenomicRanges,
+    AnnotationHub
+Suggests:
+    BiocManager,
+    BiocStyle,
     knitr,
     riceidconverter,
     rmarkdown,

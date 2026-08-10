@@ -136,7 +136,9 @@ Gene models in this database are keyed by MSU locus identifiers
 order and dropping identifiers that cannot be converted.
 
 ```{r msu_to_rap, eval = requireNamespace("riceidconverter", quietly = TRUE)}
-msu_to_rap(c("LOC_Os01g01010", "LOC_Os01g01019", "LOC_Os01g01040"))
+msu_ids <- c("LOC_Os01g01010", "LOC_Os01g01019", "LOC_Os01g01040")
+rap_ids <- msu_to_rap(msu_ids)
+print(rap_ids)
 ```
 
 # Session information
