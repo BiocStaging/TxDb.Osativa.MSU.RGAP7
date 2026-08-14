@@ -31,7 +31,19 @@
 
 - Updated `metadata.csv` file.
 
-## Version 0.99.45 (2026-08-07)
+## Version 0.99.5 (2026-08-07)
 
 - Updated `DESCRIPTION` file.
+
+## Version 0.99.6 (2026-08-08)
+
+- Fixed the bugs.
+
+## Version 0.99.7 (2026-08-08)
+
+- Fixed the bugs.
+
+## Version 0.99.8 (2026-08-15)
+
+- Updated the `inst/scripts/make-data.R`
 
