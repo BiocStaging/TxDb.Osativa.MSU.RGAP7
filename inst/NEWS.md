@@ -47,3 +47,6 @@
 
 - Updated the `inst/scripts/make-data.R`
 
+## Version 0.99.9 (2026-09-04)
+
+- Fixed the WARNINGS.
